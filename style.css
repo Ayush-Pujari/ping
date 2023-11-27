@@ -1,0 +1,27 @@
+
+.heading{
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+}
+.heading h3{
+    display: inline;
+    font-size: 20PX;
+}
+.heading button{
+    float: right;
+    border: 1px solid white;
+
+}
+.modal-dialog{
+    width: 90%;
+}
+.instruction_image{
+    display: inline-block;
+    width: 45%;
+}
+body{
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
