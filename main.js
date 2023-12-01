@@ -21,8 +21,19 @@ var ball = {
     dy:3
 }
 
-function setup(){
-  var canvas =  createCanvas(700,600);
+function setup() {
+	canvas = createCanvas(1240,336);
+	canvas.parent("canvas")
+
+
+	video=createCapture(VIDEO);
+	video.size(600,300);
+
+	poseNet=ml5.poseNet(video,modalLoaded);
+	poseNet.on("pose",gotPoses);
+}
+function modalLoaded(){
+	console.log("Modal Loaded!")
 }
 
 
