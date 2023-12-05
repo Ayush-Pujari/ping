@@ -23,6 +23,12 @@ var ball = {
     dy:3
 }
 
+
+function restart(){
+  pcscore=0;
+  playerscore=0;
+}
+ 
 function setup() {
 	canvas = createCanvas(700,600);
 	canvas.parent("canvas")
@@ -166,7 +172,7 @@ if(pcscore ==4){
     stroke("white");
     textSize(25)
     text("Game Over!☹☹",width/2,height/2);
-    text("Reload The Page!",width/2,height/2+30)
+    text("Click on resart button to load the page",width/2,height/2+30)
     noLoop();
     pcscore = 0;
 }
