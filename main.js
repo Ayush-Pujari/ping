@@ -1,6 +1,8 @@
 
 /*created by prashant shukla */
-
+score=0;
+wristX="";
+wristY="";
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -22,7 +24,7 @@ var ball = {
 }
 
 function setup() {
-	canvas = createCanvas(1240,336);
+	canvas = createCanvas(700,600);
 	canvas.parent("canvas")
 
 
@@ -34,6 +36,15 @@ function setup() {
 }
 function modalLoaded(){
 	console.log("Modal Loaded!")
+}
+function gotPoses(results){
+	if(results.length > 0){
+    console.log(results);
+    score=results[0].pose.keypoints[10].score;
+		wristX=results[0].pose.rightWrist.x;
+		wristY=results[0].pose.leftWrist.y;
+	}
+
 }
 
 
@@ -48,7 +59,11 @@ function draw(){
  fill("black");
  stroke("black");
  rect(0,0,20,700);
- 
+ if(score>0.2){
+ fill("red");
+ stroke("red");
+ circle(wristX,wristY,25)
+ }
    //funtion paddleInCanvas call 
    paddleInCanvas();
  
@@ -56,7 +71,7 @@ function draw(){
    fill(250,0,0);
     stroke(0,0,250);
     strokeWeight(0.5);
-   paddle1Y = mouseY; 
+   paddle1Y = wristY; 
    rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
    
    
