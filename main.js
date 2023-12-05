@@ -26,7 +26,7 @@ var ball = {
 function setup() {
 	canvas = createCanvas(700,600);
 	canvas.parent("canvas")
-
+  game_status="";
 
 	video=createCapture(VIDEO);
 	video.size(600,300);
@@ -64,6 +64,10 @@ function draw(){
  stroke("red");
  circle(wristX,wristY,25)
  }
+ if(game_status=="start"){
+  
+ }
+
    //funtion paddleInCanvas call 
    paddleInCanvas();
  
@@ -93,7 +97,10 @@ function draw(){
     move();
 }
 
-
+function startGame(){
+  game_status="start";
+  document.getElementById("status").innerHTML="Game is loaded";
+ }
 
 //function reset when ball does notcame in the contact of padde
 function reset(){
