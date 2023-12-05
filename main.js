@@ -28,7 +28,10 @@ function restart(){
   pcscore=0;
   playerscore=0;
 }
+function preload(){
+  missedww=loadSound("missed.wav");
  
+}
 function setup() {
 	canvas = createCanvas(700,600);
 	canvas.parent("canvas")
@@ -155,6 +158,7 @@ function move(){
    }
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
+    missedww.play();
     ball.dx = -ball.dx+0.5;
     playerscore++;
   }
