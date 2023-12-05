@@ -31,7 +31,7 @@ function restart(){
 }
 function preload(){
   missedww=loadSound("missed.wav");
- 
+ missedee=loadSound("ball_touch_paddel.wav");
 }
 function setup() {
 	canvas = createCanvas(700,600);
@@ -159,7 +159,7 @@ function move(){
    }
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
-    missedww.play();
+    missedee.play();
     ball.dx = -ball.dx+0.5;
     playerscore++;
   }
